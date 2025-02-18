@@ -14,3 +14,6 @@ theme: sirius-college
 src: ./pages/lection_1.md
 ---
 
+---
+src: ./pages/lection_2.md
+---
