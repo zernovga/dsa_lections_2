@@ -1,29 +1,5 @@
 ---
 theme: sirius-college
-addons:
-  - tldraw
----
-
-# Основы алгоритмизации и программирования
-
----
-
-# Оглавление
-
-1. [Введение](/3)
-2. [Числовые алгоритмы](/27)
-3. [Алгоритмы сортировки](/51)
-
----
-src: ./pages/lection_1.md
----
-
----
-src: ./pages/lection_2.md
----
-
----
-theme: sirius-college
 exportFilename: final/dsa_lection_3
 layout: cover
 ---
@@ -75,16 +51,6 @@ layout: section
 
 ---
 
-# Сортировка пузырьком
-
-::center
-
-<tldraw class="w-230 h-100" doc="tldraw/bubble.json"></tldraw>
-
-::
-
----
-
 # Сортировка вставками
 
 В начальный момент отсортированная последовательность пуста. На каждом шаге алгоритма выбирается один из элементов входных данных и помещается на нужную позицию в уже отсортированной последовательности до тех пор, пока набор входных данных не будет исчерпан.
@@ -103,7 +69,7 @@ layout: section
 
 ::center
 
-<tldraw class="w-230 h-100" doc="tldraw/insertion.json"></tldraw>
+<tldraw class="w-230 h-100" doc="tldraw/doc-oSpzGmUQvdOSzDqu1pLmP.json"></tldraw>
 
 ::
 
@@ -118,16 +84,6 @@ layout: section
 ::v-click
 
 > Сложность: $O(n^2)$
-
-::
-
----
-
-# Гномья сортировка
-
-::center
-
-<tldraw class="w-230 h-100" doc="tldraw/gnome.json"></tldraw>
 
 ::
 
@@ -159,7 +115,7 @@ layout: section
 
 # Сортировка слиянием
 
-```python {*|2|4-9|4|5-6|7-9|10-15|16}{maxHeight: '420px'}
+```python {*}{maxHeight: '420px'}
 def merge(A, B):
     i, j, C = 0, 0, []
     while True:
@@ -182,17 +138,7 @@ def merge(A, B):
 
 # Сортировка слиянием
 
-::center
-
-<tldraw class="w-230 h-100" doc="tldraw/merge.json"></tldraw>
-
-::
-
----
-
-# Сортировка слиянием
-
-```python
+```python {*}{maxHeight: '420px'}
 def top_down_merge_sort(A):
     if len(A) == 1:
         return A
@@ -208,17 +154,7 @@ def top_down_merge_sort(A):
 
 # Сортировка слиянием
 
-::center
-
-<tldraw class="w-230 h-100" doc="tldraw/merge_top_down.json"></tldraw>
-
-::
-
----
-
-# Сортировка слиянием
-
-```python {*}{maxHeight: '420px'}
+```python
 def bottom_up_merge_sort(A):
     k = 1
     while k < len(A):
@@ -231,13 +167,56 @@ def bottom_up_merge_sort(A):
 
 ---
 
-# Сортировка слиянием
+# Сортировка слиянием. Галопирование (galloping)
 
-::center
+```python
+def galloping(AB, n, C):
+    C[:] = AB[:n]
 
-<tldraw class="w-230 h-100" doc="tldraw/merge_bottom_up.json"></tldraw>
+    # r — указатель на конец результата
+    # j — место последней вставки
+    # m — длина остатка B
+    r, j, m = 0, n, len(AB) - n
+    for i in range(n):
+        # k — степень двойки
+        # l — указатель на 2^k-1 элемент
+        k, l = 0, 0
+        while l < m and AB[j+l] < C[i]:
+            k += 1
+            l = 2**k - 1
 
-::
+        if l >= m:
+            l = m - 1
+
+        while l >= 0 and AB[j+l] > C[i]:
+            l -= 1
+
+        l += 1
+        AB[r:r+l], AB[r+l] = AB[j:j+l], C[i]
+        r, j, m = r + l + 1, j + l, m - l
+```
+
+---
+
+# Сортировка слиянием. Chunking
+
+```python
+def chunking(A):
+    chunks = []
+    a, d = 0, 0
+    for b in range(1, len(A)):
+        if d == 0:
+            d = A[b] - A[a]
+            continue
+
+        if (A[b] - A[b-1])*d < 0:
+            chunks.append((a, b-1) if d > 0 else (b-1, a))
+            a, d = b, 0
+
+    chunks.append((a, b) if d > 0 else (b, a))
+
+    return chunks
+```
 
 ---
 layout: section
@@ -265,7 +244,7 @@ layout: section
 
 # Быстрая сортировка
 
-```python {*|14-19|15|16|1-11|2-3|5-8|5|6|7-8|10|11|16|18-19|*}{maxHeight: '420px'}
+```python
 def partition(array, low, high):
     pivot = array[high]
     i = low - 1
@@ -277,8 +256,13 @@ def partition(array, low, high):
 
     array[i + 1], array[high] = array[high], array[i + 1]
     return i + 1
+```
 
+---
 
+# Быстрая сортировка
+
+```python
 def quicksort(array, low, high):
     if low < high:
         pi = partition(array, low, high)
@@ -286,16 +270,6 @@ def quicksort(array, low, high):
         quicksort(array, low, pi - 1)
         quicksort(array, pi + 1, high)
 ```
-
----
-
-# Быстрая сортировка
-
-::center
-
-<tldraw class="w-230 h-100" doc="tldraw/quicksort.json"></tldraw>
-
-::
 
 ---
 
@@ -311,7 +285,6 @@ def quicksort(array, low, high):
 | ---------- | :-------------------: | :--------------------: | :----------------------------: |
 | Пузырьком  |       $O(n^2)$        |        $O(n^2)$        |             $O(1)$             |
 | Вставками  |       $O(n^2)$        |        $O(n^2)$        |             $O(1)$             |
-| Гномья     |       $O(n^2)$        |        $O(n^2)$        |             $O(1)$             |
 | Слиянием   |    $O(n \log{n})$     |     $O(n \log{n})$     |             $O(n)$             |
 | Быстрая    |       $O(n^2)$        |     $O(n \log{n})$     |             $O(1)$             |
 | IntroSort  |    $O(n \log{n})$     |     $O(n \log{n})$     |             $O(n)$             |
