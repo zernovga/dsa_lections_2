@@ -60,7 +60,7 @@
       }
     },
     "shape:s26csofm64f6SEO2Da4A6": {
-      "x": 618.376383745265,
+      "x": -0.25884448494773693,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -90,7 +90,7 @@
       "typeName": "shape"
     },
     "shape:UNdExophj80N6zcuO4mol": {
-      "x": 774.5473914846284,
+      "x": 465.229777369522,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -120,7 +120,7 @@
       "typeName": "shape"
     },
     "shape:bDfrE1zfQlOptMnh_rJ4P": {
-      "x": 930.7183992239918,
+      "x": 161.9609659816566,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -132,7 +132,7 @@
         "w": 108.68341118930049,
         "h": 106.33221760207051,
         "geo": "rectangle",
-        "color": "black",
+        "color": "light-blue",
         "labelColor": "black",
         "fill": "solid",
         "dash": "draw",
@@ -150,7 +150,7 @@
       "typeName": "shape"
     },
     "shape:nBhDhKFxAkp6CghM_bk4v": {
-      "x": 462.2053760059015,
+      "x": 774.5473914846284,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -180,7 +180,7 @@
       "typeName": "shape"
     },
     "shape:3tEIiGsl3dErW116q6o86": {
-      "x": 306.0343682665383,
+      "x": 930.7183992239918,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -210,7 +210,7 @@
       "typeName": "shape"
     },
     "shape:Hy0BbMVhKF0J2KeZ-yJ2t": {
-      "x": 149.8633605271748,
+      "x": -150.3810494970703,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -240,7 +240,7 @@
       "typeName": "shape"
     },
     "shape:zMybv8BfrTW63U3w8tfxi": {
-      "x": -6.3076472121886695,
+      "x": 312.08317099377905,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -270,7 +270,7 @@
       "typeName": "shape"
     },
     "shape:mVcnWOkNVYnhaeZRit2YP": {
-      "x": -162.47865495155202,
+      "x": -318.64966269091536,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -300,7 +300,7 @@
       "typeName": "shape"
     },
     "shape:m38Dfu5tv4iUvVWyANZ3y": {
-      "x": -318.64966269091536,
+      "x": -474.82067043027877,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -330,7 +330,7 @@
       "typeName": "shape"
     },
     "shape:ii8hTMROr1AFmGOwi-nJX": {
-      "x": -474.8206704302788,
+      "x": 631.986189881557,
       "y": 151.7441940258177,
       "rotation": 0,
       "isLocked": false,
@@ -342,7 +342,7 @@
         "w": 108.68341118930049,
         "h": 106.33221760207051,
         "geo": "rectangle",
-        "color": "black",
+        "color": "light-blue",
         "labelColor": "black",
         "fill": "solid",
         "dash": "draw",
@@ -359,14 +359,37 @@
       "index": "a1tZ66lK",
       "typeName": "shape"
     },
-    "shape:NGYXQ8TzYsmZq-hu27Sjc": {
-      "x": 312.6754322789968,
-      "y": 401.21913283534553,
+    "shape:sfjaHrQgtFxIba6UJrfFS": {
+      "x": -515.7781317334617,
+      "y": 427.19041552271545,
       "rotation": 0,
       "isLocked": false,
       "opacity": 1,
       "meta": {},
-      "id": "shape:NGYXQ8TzYsmZq-hu27Sjc",
+      "id": "shape:sfjaHrQgtFxIba6UJrfFS",
+      "type": "text",
+      "props": {
+        "color": "black",
+        "size": "m",
+        "w": 821.8125,
+        "text": "def partition(array, low, high):\n    pivot = array[high]\n    i = low - 1\n\n    for j in range(low, high):\n        if array[j] <= pivot:\n            i = i + 1\n            array[i], array[j] = array[j], array[i]\n\n    array[i + 1], array[high] = array[high], array[i + 1]\n    return i + 1",
+        "font": "mono",
+        "textAlign": "start",
+        "autoSize": true,
+        "scale": 1
+      },
+      "parentId": "page:page",
+      "index": "a61Oa",
+      "typeName": "shape"
+    },
+    "shape:8LqvQRWDhQ7bnsSHtelLJ": {
+      "x": 306.0343682665383,
+      "y": 427.19041552271545,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:8LqvQRWDhQ7bnsSHtelLJ",
       "type": "text",
       "props": {
         "color": "black",
@@ -379,30 +402,67 @@
         "scale": 1
       },
       "parentId": "page:page",
-      "index": "a657H",
+      "index": "a71PB",
       "typeName": "shape"
     },
-    "shape:k-l23qgHZogRn7Qf4V9SR": {
-      "x": -509.1370066858469,
-      "y": 401.21913283534553,
+    "shape:xe3JzuhgHQhcBW6GPr62q": {
+      "x": 285.1926834282534,
+      "y": 118.31967765443437,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 0.25,
+      "meta": {},
+      "id": "shape:xe3JzuhgHQhcBW6GPr62q",
+      "type": "geo",
+      "props": {
+        "w": 792.0816196142633,
+        "h": 188.88711416363856,
+        "geo": "rectangle",
+        "color": "red",
+        "labelColor": "black",
+        "fill": "none",
+        "dash": "dotted",
+        "size": "m",
+        "font": "mono",
+        "text": "",
+        "align": "middle",
+        "verticalAlign": "middle",
+        "growY": 0,
+        "url": "",
+        "scale": 1
+      },
+      "parentId": "page:page",
+      "index": "a88re",
+      "typeName": "shape"
+    },
+    "shape:PVvrFDLzsdm-BuA3TpxpJ": {
+      "x": 441.0345664605585,
+      "y": 127.9047523736325,
       "rotation": 0,
       "isLocked": false,
       "opacity": 1,
       "meta": {},
-      "id": "shape:k-l23qgHZogRn7Qf4V9SR",
-      "type": "text",
+      "id": "shape:PVvrFDLzsdm-BuA3TpxpJ",
+      "type": "geo",
       "props": {
-        "color": "black",
+        "w": 157.0738330072275,
+        "h": 154.01110090644093,
+        "geo": "rectangle",
+        "color": "yellow",
+        "labelColor": "black",
+        "fill": "none",
+        "dash": "dotted",
         "size": "m",
-        "w": 821.8124389648438,
-        "text": "def partition(array, low, high):\n    pivot = array[high]\n    i = low - 1\n\n    for j in range(low, high):\n        if array[j] <= pivot:\n            i = i + 1\n            array[i], array[j] = array[j], array[i]\n\n    array[i + 1], array[high] = array[high], array[i + 1]\n    return i + 1",
         "font": "mono",
-        "textAlign": "start",
-        "autoSize": true,
+        "text": "",
+        "align": "middle",
+        "verticalAlign": "middle",
+        "growY": 0,
+        "url": "",
         "scale": 1
       },
       "parentId": "page:page",
-      "index": "a773Z",
+      "index": "a91Q4",
       "typeName": "shape"
     }
   },
