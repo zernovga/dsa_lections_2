@@ -315,3 +315,14 @@ def quicksort(array, low, high):
 | Слиянием   |    $O(n \log{n})$     |     $O(n \log{n})$     |             $O(n)$             |
 | Быстрая    |       $O(n^2)$        |     $O(n \log{n})$     |             $O(1)$             |
 | IntroSort  |    $O(n \log{n})$     |     $O(n \log{n})$     |             $O(n)$             |
+
+---
+
+
+<SlidevGraph
+  id="graph1"
+  :items="[
+    { name: 'foo', color: '#155' },
+    { name: 'bar', color: '#551', from: 'foo' },
+  ]"
+/>
