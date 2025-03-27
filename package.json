@@ -23,8 +23,7 @@
   "devDependencies": {
     "playwright-chromium": "^1.51.1",
     "prettier": "^3.5.3",
-    "prettier-plugin-slidev": "^1.0.5",
-    "slidev-addon-graph": "^0.0.4"
+    "prettier-plugin-slidev": "^1.0.5"
   },
   "prettier": {
     "overrides": [
