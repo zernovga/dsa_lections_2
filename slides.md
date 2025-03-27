@@ -13,6 +13,9 @@ addons:
 1. [Введение](/3)
 2. [Числовые алгоритмы](/27)
 3. [Алгоритмы сортировки](/51)
+4. [Динамическое программирование](/78)
+5. [Структуры данных](/104)
+6. [Графы](/123)
 
 ---
 src: ./pages/lection_1.md
@@ -326,3 +329,15 @@ def quicksort(array, low, high):
     { name: 'bar', color: '#551', from: 'foo' },
   ]"
 />
+
+---
+src: ./pages/lection_4.md
+---
+
+---
+src: ./pages/lection_5.md
+---
+
+---
+src: ./pages/lection_6.md
+---
