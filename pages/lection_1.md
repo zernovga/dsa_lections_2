@@ -47,7 +47,7 @@ layout: two-cols
 # Группа в Telegram
 
 ::center
-![alt text](/img/6/1/qr.png){width=450px}
+![alt text](/img/1/qr.png){width=450px}
 ::
 
 ---
@@ -171,7 +171,7 @@ layout: image-right
 
 ::image::
 
-![alt text](./img/6/1/image.png)
+![alt text](./img/1/image.png)
 
 **Пауль Бахман**
 

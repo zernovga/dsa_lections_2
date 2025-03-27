@@ -35,7 +35,7 @@ layout: section
 Зададим основание “системы счисления” `SYS`
 
 ::center
-![alt text](/img/6/2/image.png)
+![alt text](/img/2/image.png)
 ::
 
 ---

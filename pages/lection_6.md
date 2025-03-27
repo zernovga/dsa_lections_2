@@ -27,7 +27,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/1.drawio.png)
+![text](../pages/img/6/1.drawio.png)
 
 ---
 layout: image-right
@@ -39,7 +39,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/2.drawio.png)
+![text](../pages/img/6/2.drawio.png)
 
 ---
 layout: image-right
@@ -51,7 +51,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/3.drawio.png)
+![text](../pages/img/6/3.drawio.png)
 
 ---
 
@@ -99,7 +99,7 @@ $$
 
 ::image::
 
-![text](/img/6/4.drawio.png)
+![text](../pages/img/6/4.drawio.png)
 
 ---
 layout: image-left
@@ -123,13 +123,40 @@ $$
 
 ::image::
 
-![text](/img/6/5.drawio.png)
+![text](../pages/img/6/5.drawio.png)
 
 ---
 
 # Матрица смежности
 
-<<< @/code/6/adjacency_matrix.py {all|2-4|6-10|15-20|22-26|all}{maxHeight:'420px'}
+```python {all|2-4|6-10|15-20|22-26|all}{maxHeight:'420px'}
+class Graph(object):
+    def __init__(self, size):
+        self.adjMatrix = [[0] * size for i in range(size)]
+        self.size = size
+
+    def add_edge(self, v1, v2):
+        if v1 == v2:
+            print(f"Та же вершина {v1} и {v2}")
+        self.adjMatrix[v1][v2] = 1
+        self.adjMatrix[v2][v1] = 1
+
+    def __len__(self):
+        return self.size
+
+    def remove_edge(self, v1, v2):
+        if self.adjMatrix[v1][v2] == 0:
+            print(f"Нет ребра между {v1} и {v2}")
+            return
+        self.adjMatrix[v1][v2] = 0
+        self.adjMatrix[v2][v1] = 0
+
+    def print_matrix(self):
+        for row in self.adjMatrix:
+            for val in row:
+                print(f'{val:4d}')
+            print()
+```
 
 ---
 
@@ -180,7 +207,7 @@ layout: image-left
 
 ::image::
 
-![text](/img/6/4.drawio.png)
+![text](../pages/img/6/4.drawio.png)
 
 ---
 
@@ -212,7 +239,34 @@ graph = {'A': ['B', 'C'],
 
 # Списки смежности
 
-<<< @/code/6/adjacency_list.py {all|1-4|7-9|11-17|19-26|all}{maxHeight:'420px'}
+```python {all|1-4|7-9|11-17|19-26|all}{maxHeight:'420px'}
+class AdjNode:
+    def __init__(self, value):
+        self.vertex = value
+        self.next = None
+
+class Graph:
+    def __init__(self, num):
+        self.V = num
+        self.graph = [None] * self.V
+
+    def add_edge(self, s, d):
+        node = AdjNode(d)
+        node.next = self.graph[s]
+        self.graph[s] = node
+        node = AdjNode(s)
+        node.next = self.graph[d]
+        self.graph[d] = node
+
+    def print_graph(self):
+        for i in range(self.V):
+            print("Вершина " + str(i) + ":", end="")
+        temp = self.graph[i]
+        while temp:
+            print(f" -> {temp.vertex}", end="")
+            temp = temp.next
+        print(" \n")
+```
 
 ---
 
@@ -281,7 +335,7 @@ $$
 
 ::image::
 
-![text](/img/6/6.drawio.png)
+![text](../pages/img/6/6.drawio.png)
 
 ---
 layout: image-left
@@ -301,13 +355,36 @@ $$
 
 ::image::
 
-![text](/img/6/7.drawio.png)
+![text](../pages/img/6/7.drawio.png)
 
 ---
 
 # Матрица инцидентности
 
-<<< @/code/6/incidence_matrix.py {all|6-11|16-21|all}{maxHeight:'420px'}
+```python {all|6-11|16-21|all}{maxHeight:'420px'}
+class Graph(object):
+    def __init__(self, size):
+        self.incMatrix = []
+        self.size = size
+
+    def add_edge(self, v1, v2):
+        if v1 == v2:
+            print(f"Та же вершина {v1} и {v2}")
+            return
+        newEdge = [1 if i == v1 or i == v2 else 0 for i in range(self.size)]
+        self.incMatrix.append(newEdge)
+
+    def __len__(self):
+        return self.size
+
+    def remove_edge(self, v1, v2):
+        for e in range(len(self.incMatrix)):
+            if self.incMatrix[e][v1] and self.incMatrix[e][v2]:
+                self.incMatrix.pop(e)
+                return
+        print(f"Нет ребра между {v1} и {v2}")
+
+```
 
 ---
 layout: section
@@ -339,7 +416,29 @@ layout: section
 
 # Поиск в глубину в неориентированных графах
 
-<<< @/code/6/dfs.py {all|4-8|10-16|17-19|all}{maxHeight:'420px'}
+```python {all|4-8|10-16|17-19|all}{maxHeight:'420px'}
+from collections import defaultdict
+
+
+class Graph:
+    def __init__(self):
+        self.graph = defaultdict(list)
+
+    def addEdge(self, u, v):
+        self.graph[u].append(v)
+
+    def DFSUtil(self, v, visited):
+        visited.add(v)
+        print(v, end=" ")
+
+        for neighbour in self.graph[v]:
+            if neighbour not in visited:
+                self.DFSUtil(neighbour, visited)
+
+    def DFS(self, v):
+        visited = set()
+        self.DFSUtil(v, visited)
+```
 
 ---
 
@@ -359,13 +458,13 @@ layout: section
 
 <template #0>
 
-![img](/img/6/8.drawio.png)
+![img](../pages/img/6/8.drawio.png)
 
 </template>
 
 <template #1>
 
-![img](/img/6/8-2.drawio.png)
+![img](../pages/img/6/8-2.drawio.png)
 
 </template>
 
@@ -445,7 +544,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/9.drawio.png)
+![text](../pages/img/6/9.drawio.png)
 
 ---
 
@@ -467,4 +566,25 @@ layout: image-right
 
 # Алгоритм Кана
 
-<<< @/code/6/kahn.py {all|4-6|7-9|10-12|13-19|16-19|20|all}{maxHeight:'420px'}
+```python {all|4-6|7-9|10-12|13-19|16-19|20|all}{maxHeight:'420px'}
+from collections import deque
+
+def isCyclic(self):
+    inDegree = [0] * self.V
+    q = deque()
+    visited = 0
+    for u in range(self.V):
+        for v in self.adj[u]:
+            inDegree[v] += 1
+    for u in range(self.V):
+        if inDegree[u] == 0:
+            q.append(u)
+    while q:
+        u = q.popleft()
+        visited += 1
+        for v in self.adj[u]:
+            inDegree[v] -= 1
+            if inDegree[v] == 0:
+                q.append(v)
+    return visited != self.V
+```
