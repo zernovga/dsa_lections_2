@@ -27,7 +27,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/1.drawio.png)
+![text](/img/6/1.png)
 
 ---
 layout: image-right
@@ -39,7 +39,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/2.drawio.png)
+![text](/img/6/2.png)
 
 ---
 layout: image-right
@@ -51,7 +51,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/3.drawio.png)
+![text](/img/6/3.png)
 
 ---
 
@@ -99,7 +99,7 @@ $$
 
 ::image::
 
-![text](/img/6/4.drawio.png)
+![text](/img/6/4.png)
 
 ---
 layout: image-left
@@ -123,7 +123,7 @@ $$
 
 ::image::
 
-![text](/img/6/5.drawio.png)
+![text](/img/6/5.png)
 
 ---
 
@@ -207,7 +207,7 @@ layout: image-left
 
 ::image::
 
-![text](/img/6/4.drawio.png)
+![text](/img/6/4.png)
 
 ---
 
@@ -335,7 +335,7 @@ $$
 
 ::image::
 
-![text](/img/6/6.drawio.png)
+![text](/img/6/6.png)
 
 ---
 layout: image-left
@@ -355,7 +355,7 @@ $$
 
 ::image::
 
-![text](/img/6/7.drawio.png)
+![text](/img/6/7.png)
 
 ---
 
@@ -458,13 +458,13 @@ class Graph:
 
 <template #0>
 
-![img](/img/6/8.drawio.png)
+![img](/img/6/8.png)
 
 </template>
 
 <template #1>
 
-![img](/img/6/8-2.drawio.png)
+![img](/img/6/8-2.png)
 
 </template>
 
@@ -544,7 +544,7 @@ layout: image-right
 
 ::image::
 
-![text](/img/6/9.drawio.png)
+![text](/img/6/9.png)
 
 ---
 
