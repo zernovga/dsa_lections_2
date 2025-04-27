@@ -17,6 +17,7 @@ addons:
 5. [Структуры данных](/104)
 6. [Графы](/123)
 7. [Кратчайшие пути](/160)
+8. [Деревья](/180)
 
 ---
 src: ./pages/lection_1.md
@@ -345,4 +346,8 @@ src: ./pages/lection_6.md
 
 ---
 src: ./pages/lection_7.md
+---
+
+---
+src: ./pages/lection_8.md
 ---
